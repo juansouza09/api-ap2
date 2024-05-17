@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorvetes por Categoria</title>
+</head>
+
+<body>
+    <h1>Sorvetes na Categoria: {{ categoria.nome }}</h1>
+    <ul>
+        {% for sorvete in sorvetes %}
+        <li>{{ sorvete.sabor }} - R$ {{ sorvete.preco }} (Quantidade: {{ sorvete.qtd }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('sorvete.get_sorvetes') }}">Voltar para a lista de sorvetes</a>
+</body>
+
+</html>
