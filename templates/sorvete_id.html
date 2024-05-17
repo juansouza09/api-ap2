@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalhes do Sorvete</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Sorvete</title>
 </head>
-
 <body>
-  <h1>Detalhes do Sorvete</h1>
-  <p><strong>ID:</strong> {{ sorvete.id }}</p>
-  <p><strong>Sabor:</strong> {{ sorvete.sabor }}</p>
-  <p><strong>Preço:</strong> {{ sorvete.preco }}</p>
-  <p><strong>Quantidade:</strong> {{ sorvete.qtd }}</p>
-
-  <a href="{{ url_for('sorvete.get_sorvetes') }}">Voltar para a lista de sorvetes</a>
-
+<h1>Detalhes do Sorvete</h1>
+<p><strong>ID:</strong> {{ sorvete.id }}</p>
+<p><strong>Sabor:</strong> {{ sorvete.sabor }}</p>
+<p><strong>Categoria:</strong> {{ sorvete.categoria }}</p>
+<p><strong>Preço (R$):</strong> {{ sorvete.preco }}</p>
+<p><strong>Quantidade em Estoque:</strong> {{ sorvete.quantidade_estoque }}</p>
+<form id="delete-form" action="{{ url_for('sorvete.delete_sorvete', id_sorvete=sorvete.id) }}" method="POST">
+    <button type="submit">Excluir Sorvete</button>
+</form>
+<a href="{{ url_for('sorvete.get_sorvetes') }}">Voltar para a lista de sorvetes</a><br>
+<a href="{{ url_for('sorvete.adicionar_sorvetes') }}">Adicionar novo sorvete</a>
 </body>
-
 </html>

@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Sorvetes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Sorvetes</title>
 </head>
-
 <body>
-  <h1>Lista de Sorvetes</h1>
-  <ul>
+<h1>Lista de Sorvetes</h1>
+<ul>
     {% for sorvete in sorvetes %}
-    <li><a href="{{ url_for('sorvete.get_sorvete', id_sorvete=sorvete.id) }}">(ID: {{ sorvete.id }}) Sabor: {{ sorvete.sabor }} Quantidade: {{ sorvete.qtd }} Categoria: {{ sorvete.categoria }} Preço: {{ sorvete.preco }}</a></li>
+    <li><a href="{{ url_for('sorvete.get_sorvete', id_sorvete=sorvete['id']) }}"> Sabor: {{ sorvete['sabor'] }} - Categoria: {{ sorvete['categoria'] }} - Preço: R$ {{ sorvete['preco'] }}  (ID: {{ sorvete['id'] }})</a></li>
     {% endfor %}
-  </ul>
-
+</ul>
 </body>
-
 </html>
