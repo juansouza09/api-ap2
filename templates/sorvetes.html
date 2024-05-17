@@ -11,7 +11,7 @@
   <h1>Lista de Sorvetes</h1>
   <ul>
     {% for sorvete in sorvetes %}
-    <li><a href="{{ url_for('sorvete.get_sorvete', id_sorvete=sorvete.id) }}">(Sabor: {{ sorvete.sabor }}) (ID: {{ sorvete.id }})</a></li>
+    <li><a href="{{ url_for('sorvete.get_sorvete', id_sorvete=sorvete.id) }}">(ID: {{ sorvete.id }}) Sabor: {{ sorvete.sabor }} Quantidade: {{ sorvete.qtd }} Categoria: {{ sorvete.categoria }} Preço: {{ sorvete.preco }}</a></li>
     {% endfor %}
   </ul>
 
